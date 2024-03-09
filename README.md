@@ -25,3 +25,7 @@ $ npm i @types/node @types/react @types/react-dom eslint eslint-config-next type
 ### tsconfig.json 작성하기
 
 tsconfig.json 파일 참조
+
+### next.config.js 작성하기
+
+next.config.js 파일 참조
