@@ -16,8 +16,12 @@ $ npm init
 $ npm i react react-dom next
 ```
 
-### devDependencies에 필요한 패키지 설치.
+### devDependencies에 필요한 패키지 설치
 
 ```
 $ npm i @types/node @types/react @types/react-dom eslint eslint-config-next typescript --save-dev
 ```
+
+### tsconfig.json 작성하기
+
+tsconfig.json 파일 참조

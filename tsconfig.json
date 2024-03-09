@@ -1,0 +1,38 @@
+{
+  "schema": "https://json.schemastore.org/tsconfig.json",
+  "compilerOptions": {
+    // compilerOptions : 타입스크립트를 자사브스립트로 컴파일할 때 사용하는 옵션이다.
+    "target": "es6", // 변환을 목표로하는 언어의 버전
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true, // 자바스크립트 파일 또한 컴파일할지 결정. 주로 자바스크립트 프로젝트를 타입스크립트로 전환하는 과정에서 .js와 .ts파일이 혼용될때 사용
+    "skipLibCheck": true, // 라이브러리에서 제공하는 d.ts에 대한 검사여부 결정.
+    "strict": true, // 컴파일러의 엄격모드
+    "forceConsistentCasingInFileName": true, // 파일 이름의 대소문자를 구분하도록 강제. 옵션이 켜져있으면 SignUp과 Signup은 서로 다른 파일이다.
+    "noEmit": true, // 컴파일 하지 않고 타입체크만 한다. Next.js는 swc가 타입스크립트 파일을 컴파일하므로 true로 설정.
+    "esModuleInterop": true, // CommonJS 방식으로 보낸 모듈을 ES 모듈 방식의 importfh rkwudhf tn dlTrp gowndek.
+    "module": "ESNext", // commonjs 는 require를 사용하고, esnext는 import를 사용한다.
+    "moduleResolution": "Node", // node는 node_modeles를 기준으로 해석하고 classic은 tsconfig.json이 있는 디렉터리를 기준으로 모듈을 해석한다. node는 module이 CommonJS일때만 사용 가능하다.
+    "resolveJsonModule": true, // JSON파일을 import 할 수 있게 해준다. 이 옵션을 켜두면 allowJS 옵션도 자동으로 켜진다.
+    "isolateModules": true, // 다른 모듈 시스템과 연계되지 않고 단독으로 있는 파일의 생성을 막기 위한 옵션
+    "jsx": "preserve", // .tsx 파일 내부에 있는 JSX를 어떻게 컴파일 할지 선정
+    /*
+    react : 기본값
+    react-jsx : 리액트 17에서 새롭게 등장한 방식
+    react-jsxdev: react-jsx 디버깅 정보가 추가
+    preserve :  변환하지 않고 드대로 유지 - swc가 JSX또한 변환해주기때문에 여기서 사용.
+    react-natice : 리액트 네이티브에서 사용하는 방식 
+     */
+    "intercremental": true, // 마지막 컴파일 정보를 .tsbuildinfo 파일 형태로 만들어 디스크에 저장.
+    "baseUrl": "src", // 모듈을 찾을 때 기준이 되는 디렉터리를 지정.
+    "paths": {
+      // 일반적으로 모듈을 불러오게 되면 ./ ../ 를 활용해 상대 경로를 활용하는데, 경로에 별도 별칭을 지정할 수 있다.
+      "#pages/*": ["pages/*"],
+      "#hooks/*": ["hooks/*"],
+      "#types/*": ["types/*"],
+      "#components/*": ["components/*"],
+      "#utils/*": ["utils/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"], // 타입스크립트 컴파일 대상에서 포함시킬 파일 목록을 의미한다.
+  "exclude": ["node_modules"] // 타입스크립트 컴파일 대상에서 제외시킬 파일 목록을 의미한다.
+}
