@@ -29,3 +29,11 @@ tsconfig.json 파일 참조
 ### next.config.js 작성하기
 
 next.config.js 파일 참조
+
+### ESLint와 Prettier 설정하기
+
+```
+$ npm i @titicaca/eslint-config-triple --save-dev
+```
+
+.eslintrc.js, .eslintignore 추가
